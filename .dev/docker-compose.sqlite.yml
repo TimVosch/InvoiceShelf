@@ -42,11 +42,5 @@ services:
     networks:
       - invoiceshelf-dev
 
-  pdf:
-    image: gotenberg/gotenberg:8
-    restart: unless-stopped
-    networks:
-      - invoiceshelf-dev
-
 networks:
   invoiceshelf-dev:
