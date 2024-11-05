@@ -1574,6 +1574,7 @@
     "address_incomplete": "Onvolledig adres"
   },
   "pdf_estimate_label": "Offerte",
+  "pdf_draft_label": "Concept",
   "pdf_estimate_number": "Offerte nummer",
   "pdf_estimate_date": "Offerte Datum",
   "pdf_estimate_expire_date": "Vervaldatum",
@@ -1581,6 +1582,7 @@
   "pdf_invoice_number": "Factuurnummer",
   "pdf_invoice_date": "Factuur datum",
   "pdf_invoice_due_date": "Vervaldatum",
+  "pdf_invoice_order_reference": "Ordernummer",
   "pdf_notes": "Opmerkingen",
   "pdf_items_label": "Artikelen",
   "pdf_quantity_label": "Aantal stuks",

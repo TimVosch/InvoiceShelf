@@ -1491,6 +1491,7 @@
     "address_incomplete": "Incomplete Address"
   },
   "pdf_estimate_label": "Estimate",
+  "pdf_draft_label": "Draft",
   "pdf_estimate_number": "Estimate Number",
   "pdf_estimate_date": "Estimate Date",
   "pdf_estimate_expire_date": "Expiry Date",

@@ -122,6 +122,7 @@ class SerialNumberFormatter
         $last = $this->model::orderBy('sequence_number', 'desc')
             ->where('company_id', $companyId)
             ->where('sequence_number', '<>', null)
+            ->whereYear('created_at', date('Y'))
             ->take(1)
             ->first();
 
