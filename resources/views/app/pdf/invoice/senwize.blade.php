@@ -25,7 +25,7 @@
 	<section class="flex justify-between items-center">
 		<div>
 		    @if ($logo)
-		    <img class="h-24" src="{{ \App\Space\ImageUtils::toBase64Src($logo) }}" alt="Company Logo">
+-		    <img class="h-24" src="data:image/png;base64,{{base64_encode(file_get_contents($logo,false))}}" alt="Company Logo">
 		    @else
 		    <h1 class="text-3xl"> {{ $invoice->customer->company->name }} </h1>
 		    @endif
