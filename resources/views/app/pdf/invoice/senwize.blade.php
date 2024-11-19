@@ -1,12 +1,3 @@
-<?php
-$arrContextOptions= [
-    'ssl' => [
-        'cafile' => '/usr/local/share/ca-certificates/custom_root_ca.crt',
-        'verify_peer'=> true,
-        'verify_peer_name'=> true,
-    ],
-];
-?>
 <!DOCTYPE html>
 <html lang="en" class="text-[11px] bg-white">
 <head>
@@ -31,10 +22,10 @@ $arrContextOptions= [
     @if ($invoice->status === 'DRAFT')
     	<span class="block fixed w-full top-0 text-3xl text-red-500 font-semibold text-center">@lang('pdf_draft_label')</span>
 	@endif
-	<section class="flex justify-between items-center">  
+	<section class="flex justify-between items-center">
 		<div>
 		    @if ($logo)
-		    <img class="h-24" src="data:image/png;base64,{{base64_encode(file_get_contents($logo,false,stream_context_create($arrContextOptions)))}}" alt="Company Logo">
+		    <img class="h-24" src="{{ \App\Space\ImageUtils::toBase64Src($logo) }}" alt="Company Logo">
 		    @else
 		    <h1 class="text-3xl"> {{ $invoice->customer->company->name }} </h1>
 		    @endif
@@ -78,7 +69,7 @@ $arrContextOptions= [
     @include('app.pdf.invoice.partials.table-tailwind')
 </section>
 <section class="text-center text-gray-500">
-	Gelieve het totaalbedrag voor de vervaldatum over te maken naar LT55 3250 0322 8210 5225 (swift/bic REVOLT21) onder vermelding van het factuurnummer.	
+	Gelieve het totaalbedrag voor de vervaldatum over te maken naar LT55 3250 0322 8210 5225 (swift/bic REVOLT21) onder vermelding van het factuurnummer.
 </section>
 <script type="text/javascript">
 	const header = document.getElementById("header");
