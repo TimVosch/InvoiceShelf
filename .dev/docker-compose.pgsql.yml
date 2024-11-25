@@ -8,6 +8,9 @@ services:
         - UID=${USRID:-1000}
         - GID=${GRPID:-1000}
       target: development
+    environment:
+      - "XHPROF_ENABLED=true"
+      - "PROFILER_ENDPOINT=http://host.docker.internal:5555/api/profiler/store"
     volumes:
       - ../:/var/www/html
     networks:
@@ -59,7 +62,6 @@ services:
   mail:
     container_name: invoiceshelf-dev-mailpit
     image: axllent/mailpit:latest
-    restart: always
     ports:
       - 1025:1025
       - 8025:8025
