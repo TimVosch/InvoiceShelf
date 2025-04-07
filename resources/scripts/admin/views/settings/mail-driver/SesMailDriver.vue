@@ -154,15 +154,8 @@
         >
           <template #right>
             <BaseIcon
-              v-if="isShowPassword"
+              :name="isShowPassword ? 'EyeIcon' : 'EyeSlashIcon'"
               class="mr-1 text-gray-500 cursor-pointer"
-              name="EyeOffIcon"
-              @click="isShowPassword = !isShowPassword"
-            />
-            <BaseIcon
-              v-else
-              class="mr-1 text-gray-500 cursor-pointer"
-              name="EyeIcon"
               @click="isShowPassword = !isShowPassword"
             />
           </template>
@@ -179,7 +172,7 @@
         type="submit"
       >
         <template #left="slotProps">
-          <BaseIcon v-if="!isSaving" name="SaveIcon" :class="slotProps.class" />
+          <BaseIcon v-if="!isSaving" name="ArrowDownOnSquareIcon" :class="slotProps.class" />
         </template>
         {{ $t('general.save') }}
       </BaseButton>
